@@ -1,4 +1,6 @@
-﻿namespace RecipeBook.Model
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace RecipeBook.Model
 {
     public class RecipeBookItems
     {
@@ -9,5 +11,12 @@
         public string Instructions { get; set; }
         public int CookingTimeInMinutes { get; set; }
         public DateTime CreatedAt { get; set; }
+
+        // Nullable foreign key
+        public int? CategoryID { get; set; }
+
+        // Navigation property
+        [ForeignKey("CategoryID")]
+        public Category? Category { get; set; }
     }
 }

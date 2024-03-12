@@ -22,6 +22,23 @@ namespace RecipeBook.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("RecipeBook.Model.Category", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Categories");
+                });
+
             modelBuilder.Entity("RecipeBook.Model.RecipeBookItems", b =>
                 {
                     b.Property<int>("Id")
@@ -29,6 +46,9 @@ namespace RecipeBook.Data.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("CategoryID")
+                        .HasColumnType("int");
 
                     b.Property<int>("CookingTimeInMinutes")
                         .HasColumnType("int");
@@ -54,7 +74,18 @@ namespace RecipeBook.Data.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CategoryID");
+
                     b.ToTable("RecipeBookItems");
+                });
+
+            modelBuilder.Entity("RecipeBook.Model.RecipeBookItems", b =>
+                {
+                    b.HasOne("RecipeBook.Model.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryID");
+
+                    b.Navigation("Category");
                 });
 #pragma warning restore 612, 618
         }

@@ -15,6 +15,7 @@ builder.Services.AddDbContext<RecipeDBContext>(o => o.UseSqlServer(builder.Confi
 
 
 builder.Services.AddScoped<IRepository<RecipeBookItems>, RecipeBookRepository>();
+builder.Services.AddScoped<IRepository<Category>, CategoryRepository>();
 
 var app = builder.Build();
 

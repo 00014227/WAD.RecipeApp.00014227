@@ -7,5 +7,6 @@ namespace RecipeBook.Data
     {
         public RecipeDBContext(DbContextOptions<RecipeDBContext> options) : base(options) { }
         public DbSet<RecipeBookItems> RecipeBookItems { get; set; }
+        public DbSet<Category> Categories { get; set; }
     }
 }

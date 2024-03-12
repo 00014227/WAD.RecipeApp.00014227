@@ -20,6 +20,7 @@ namespace RecipeBook.Repositories
 
         public async Task AddAsync(RecipeBookItems entity)
         {
+            entity.Category = await _dbContext.Categories.FindAsync(entity.CategoryID.Value);
             await _dbContext.RecipeBookItems.AddAsync(entity);
             await _dbContext.SaveChangesAsync();
         }
@@ -29,7 +30,7 @@ namespace RecipeBook.Repositories
         public async Task DeleteAsync(int id)
         {
             var entity = await _dbContext.RecipeBookItems.FindAsync(id);
-            if (entity == null)
+            if (entity != null)
             {
                 _dbContext.RecipeBookItems.Remove(entity);
                 await _dbContext.SaveChangesAsync();
@@ -42,7 +43,10 @@ namespace RecipeBook.Repositories
 
         // Get By Id
 
-        public async Task<RecipeBookItems> GetByIDAsync(int id) => await _dbContext.RecipeBookItems.FindAsync(id);
+        public async Task<RecipeBookItems> GetByIDAsync(int id) 
+        {
+            return await _dbContext.RecipeBookItems.Include(t=>t.Category).FirstOrDefaultAsync(t => t.Id == id);
+        } 
 
 
         // Update entity

@@ -6,10 +6,10 @@ namespace RecipeBook.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CategoryController : ControllerBase
+    public class CategoryController_00014227 : ControllerBase
     {
-        private readonly IRepository<Category> _categoryRepository;
-        public CategoryController(IRepository<Category> repository)
+        private readonly IRepository_00014227<Category_00014227> _categoryRepository;
+        public CategoryController_00014227(IRepository_00014227<Category_00014227> repository)
         {
             _categoryRepository = repository;
         }
@@ -18,7 +18,7 @@ namespace RecipeBook.Controllers
 
         // POST api/<CategoryController>
         [HttpPost]
-        public async Task<IActionResult> Create(Category categories)
+        public async Task<IActionResult> Create(Category_00014227 categories)
         {
             await _categoryRepository.AddAsync(categories);
             return CreatedAtAction(nameof(GetByID), new { id = categories.ID }, categories);
@@ -28,7 +28,7 @@ namespace RecipeBook.Controllers
 
         // GET: api/<CategoryController>
         [HttpGet]
-        public async Task<IEnumerable<Category>> Get()
+        public async Task<IEnumerable<Category_00014227>> Get()
         {
             return await _categoryRepository.GetAllAsync();
         }
@@ -76,7 +76,7 @@ namespace RecipeBook.Controllers
 
         // PUT api/<CategoryController>/5
         [HttpPut]
-        public async Task<IActionResult> Update(Category categories)
+        public async Task<IActionResult> Update(Category_00014227 categories)
         {
             //if(id!=items.ID) return BadRequest();
             await _categoryRepository.UpdateAsync(categories);

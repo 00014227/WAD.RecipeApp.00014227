@@ -10,7 +10,7 @@ using RecipeBook.Data;
 
 namespace RecipeBook.Data.Migrations
 {
-    [DbContext(typeof(RecipeDBContext))]
+    [DbContext(typeof(RecipeDBContext_00014227))]
     partial class RecipeDBContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

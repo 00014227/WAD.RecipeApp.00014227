@@ -2,7 +2,7 @@
 
 namespace RecipeBook.Model
 {
-    public class Category
+    public class Category_00014227
     {
         public int ID { get; set; }
         private string _name;

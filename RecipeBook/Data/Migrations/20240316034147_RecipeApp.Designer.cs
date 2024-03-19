@@ -11,8 +11,8 @@ using RecipeBook.Data;
 
 namespace RecipeBook.Data.Migrations
 {
-    [DbContext(typeof(RecipeDBContext))]
-    [Migration("20240308145648_RecipeApp")]
+    [DbContext(typeof(RecipeDBContext_00014227))]
+    [Migration("20240316034147_RecipeApp")]
     partial class RecipeApp
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

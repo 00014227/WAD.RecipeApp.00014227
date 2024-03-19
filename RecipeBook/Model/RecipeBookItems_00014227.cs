@@ -2,7 +2,7 @@
 
 namespace RecipeBook.Model
 {
-    public class RecipeBookItems
+    public class RecipeBookItems_00014227
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -17,6 +17,6 @@ namespace RecipeBook.Model
 
         // Navigation property
         [ForeignKey("CategoryID")]
-        public Category? Category { get; set; }
+        public Category_00014227? Category { get; set; }
     }
 }

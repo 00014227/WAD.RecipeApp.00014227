@@ -16,16 +16,20 @@ import { RecipeService } from '../../recipe.service';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  recipeService = inject(RecipeService);
   router = inject(Router)
   items:RecipeItems[]=[];
-  recipeService = inject(RecipeService);
+
   ngOnInit(){
     this.recipeService.getAll().subscribe((result)=>{
       this.items = result;
+      console.log(result, 'rrrrrrrrrrrrrrrr')
     });
+
+
   }
 
-  displayedColumns: string[] = ['ID', 'Title', 'Description', 'Category Name', 'Cooking Time' ,'Actions'];
+  displayedColumns: string[] = ['ID', 'Title', 'Description', 'Cooking Time' ,'Actions'];
 
   onCreate(){
     console.log("Oncreate Clicked")
@@ -39,8 +43,8 @@ export class HomeComponent {
     console.log("onDetails: ", id)
     this.router.navigateByUrl("/details/"+id)
   }
-  onDelete(id:number){
-    console.log("onDelete: ", id)
-    this.router.navigateByUrl("/delete/"+id)
+  onDelete(itemID:number){
+    console.log("onDelete: ", itemID)
+    this.router.navigateByUrl("/delete/"+itemID)
   }
 }

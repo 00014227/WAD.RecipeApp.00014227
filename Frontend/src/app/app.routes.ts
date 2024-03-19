@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
-import { CreateComponent } from './components/create/create.component';
-import { EditComponent } from './components/edit/edit.component';
-import { DetailsComponent } from './components/details/details.component';
-import { DeleteComponent } from './components/delete/delete.component';
+import { CreateComponent } from './components/create/create.component.14227';
+import { EditComponent } from './components/edit/edit.component.14227';
+import { DetailsComponent } from './components/details/details.component.14227';
+import { DeleteComponent } from './components/delete/delete.component.14227';
 
 
 export const routes: Routes = [

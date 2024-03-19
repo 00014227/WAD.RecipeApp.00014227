@@ -1,0 +1,34 @@
+<div class="flex mt-8 justify-center">
+    <mat-card class="shadow w-4/12">
+        <mat-card-content>
+            <div class="p-8">
+                <h2 class="text-3xl font-bold mb-4">{{ detailRecipe.name }}</h2>
+                <div class="mt-4 flex space-x-4">
+                    <span class="text-gray-600">Description:</span>
+                    <p class="text-gray-700">{{ detailRecipe.description }}</p>
+                </div>
+
+                <div class="mt-4 flex space-x-4">
+                    <span class="text-gray-600">Ingredients:</span>
+                    <p class="text-gray-700">{{ detailRecipe.ingredients }}</p>
+                </div>
+
+                <div class="mt-4 flex space-x-4">
+                    <span class="text-gray-600">Instructions:</span>
+                    <p class="text-gray-700">{{ detailRecipe.instructions }}</p>
+                </div>
+
+                <div class="mt-4 flex space-x-4">
+                    <span class="text-gray-600">Cooking Time In Minutes:</span>
+                    <p class="text-gray-700">{{ detailRecipe.cookingTimeInMinutes }}</p>
+                </div>
+
+                <div class="mt-4">
+                    <span class="text-gray-600">Category:</span>
+                    <mat-chip class="ml-2">{{ detailRecipe.category.name }}</mat-chip>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
+

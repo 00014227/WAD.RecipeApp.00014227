@@ -1,0 +1,53 @@
+<div class="p-8 mt-8 flex justify-center">
+    <form class="shadow border w-4/12 p-4">
+        <div class="flex">
+            <mat-form-field class="w-full">
+                <mat-label>Title </mat-label>
+                <input matInput name="name" type="text" [(ngModel)]="createRecipe.name">
+            </mat-form-field>
+        </div>
+        <div class="flex">
+            <mat-form-field class="w-full">
+                <mat-label>Description </mat-label>
+                <input matInput name="description" type="text" [(ngModel)]="createRecipe.description">
+            </mat-form-field>
+        </div>
+
+        <div class="flex">
+            <mat-form-field class="w-full">
+                <mat-label>Ingridients </mat-label>
+                <input matInput name="ingredients" type="text" [(ngModel)]="createRecipe.ingredients">
+            </mat-form-field>
+        </div>
+
+        <div class="flex">
+            <mat-form-field class="w-full">
+                <mat-label>Instructions </mat-label>
+                <input matInput name="instructions" type="text" [(ngModel)]="createRecipe.instructions">
+            </mat-form-field>
+        </div>
+
+        <div class="flex">
+            <mat-form-field class="w-full">
+                <mat-label>Cooking Time In Minutes </mat-label>
+                <input matInput name="cookingTimeInMinutes" type="number" [(ngModel)]="createRecipe.cookingTimeInMinutes">
+            </mat-form-field>
+        </div>
+
+        <div class="flex">
+            <mat-form-field class="w-full">
+                <mat-label>Choose Category</mat-label>
+                <mat-select [(ngModel)]="cID" name="Category">
+                    @for(c of category; track c)
+                    {
+                    <mat-option [value]="c.id">{{c.name}}</mat-option>
+                    }
+                </mat-select>
+
+            </mat-form-field>
+        </div>
+        <div class="flex justify-center">
+            <button mat-raised-button color="primary" (click)="create()">Create</button>
+        </div>
+    </form>
+</div>
